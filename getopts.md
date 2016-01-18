@@ -1,6 +1,7 @@
 ##getopts demo
 
 sample code:
+
 ```
 #! /bin/bash
 
@@ -47,5 +48,5 @@ echo "DA(${DA}), CTL(${CTL}), AUTOJUDGE(${AUTOJUDGE}) will be synced to ${WORKER
 
 some notes:
 
-  - ":" : the preceding colon means disabling verbose mode
-  - "d:" : this means "-d" should be followed by an argument, like "-d abc"
+- ":" : the preceding colon means disabling verbose mode
+- "d:" : this means "-d" should be followed by an argument, like "-d abc"
