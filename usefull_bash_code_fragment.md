@@ -1,4 +1,5 @@
 #### convert relative path to absolute path
+
 ```
 BASE_BIN=$(cd $(dirname ${0})>/dev/null;pwd)
 BASE=${BASE_BIN%/*}
@@ -44,4 +45,24 @@ function confirm () {
 }
 
 confirm "Are you sure?" && some following cmds.
+```
+
+#### use awk split string
+
+```
+echo "12|23|11" | awk '{split($0,a,"|"); print a[3],a[2],a[1]}'
+```
+
+#### enable core dump
+
+one session
+
+```
+ulimit -c unlimited
+```
+
+#### check whether a certain port has been occupied or not.
+
+```
+lsof -i:PORT
 ```
