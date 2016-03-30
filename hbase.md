@@ -8,3 +8,8 @@ $HBASE_HOME/bin/hbase org.apache.hadoop.hbase.mapreduce.CopyTable --peer.adr=dst
 ####OutOfOrderScannerNextException
 
 if this Exception happens and your rpc/client-scanner-period seems ok, check region server's log, may be something is wrong there.
+
+###ImportTable
+```
+$HBASE_HOME/bin/hbase org.apache.hadoop.hbase.mapreduce.Import table hdfs-path
+```
