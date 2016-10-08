@@ -66,3 +66,16 @@ ulimit -c unlimited
 ```
 lsof -i:PORT
 ```
+
+#### delete all files but one
+
+```
+find . ! -name 'file_you_want_to_keep.txt' -type f -exec rm -f {} +
+```
+
+#### install epel
+
+```
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+rpm -ivh epel-release-latest-6.noarch.rpm
+```
