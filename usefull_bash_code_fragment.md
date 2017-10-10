@@ -79,3 +79,40 @@ find . ! -name 'file_you_want_to_keep.txt' -type f -exec rm -f {} +
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 rpm -ivh epel-release-latest-6.noarch.rpm
 ```
+
+####run command in remote
+
+```
+ssh test-2 "/opt/idagent/services/etl/carte.sh 127.0.0.1 8080 > ${logfile} 2>&1 &"
+```
+
+####check port
+
+```
+netstat -nap | grep pid  
+```
+
+####prompt in bash
+
+```
+echo "Do you wish to install this program?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) make install; break;;
+        No ) exit;;
+    esac
+done
+```
+
+####check command exists
+
+```
+type foo >/dev/null 2>&1 || { echo >&2 "I require foo but it's not installed.  Aborting."; exit 1; }
+hash foo 2>/dev/null || { echo >&2 "I require foo but it's not installed.  Aborting."; exit 1; }
+```
+
+####match file path
+
+```
+$dd =~ ^(/[^/ ]*)+/?$
+```

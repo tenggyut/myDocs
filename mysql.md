@@ -16,7 +16,7 @@ grant all privileges on metastore.* to idcube@'%' identified by 'idcube';
 ###初始化一个root无密码的mysql server
 
 ```
-/usr/sbin/mysqld --initialize --datadir="$datadir" --user=mysql --initialize-insecure
+/usr/sbin/mysqld --initialize-insecure --datadir="$datadir" --user=mysql
 ```
 
 ###Create Database with desired encoding 

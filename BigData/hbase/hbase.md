@@ -7,6 +7,7 @@ export HBASE_OPTS="-server -Xms20g -Xmx20g -Xmn1g -XX:+UseParNewGC -XX:+UseConcM
 ```
 
 ####CopyTable
+
 ```
 $HBASE_HOME/bin/hbase org.apache.hadoop.hbase.mapreduce.CopyTable --peer.adr=dstClusterZK:2181:/hbase tableOrig
 ```
@@ -16,6 +17,7 @@ $HBASE_HOME/bin/hbase org.apache.hadoop.hbase.mapreduce.CopyTable --peer.adr=dst
 if this Exception happens and your rpc/client-scanner-period seems ok, check region server's log, may be something is wrong there.
 
 ###ImportTable
+
 ```
 $HBASE_HOME/bin/hbase org.apache.hadoop.hbase.mapreduce.Import table hdfs-path
 ```
@@ -24,4 +26,12 @@ $HBASE_HOME/bin/hbase org.apache.hadoop.hbase.mapreduce.Import table hdfs-path
 
 ```
 create 'usertable', 'family', {SPLITS => (1..n_splits).map {|i| "user#{1000+i*(9999-1000)/n_splits}"}}
+```
+
+###Thrift Server
+
+Start Thrift Server: use compact protocol and framed transport
+
+```
+${HBASE_HOME}/bin/hbase-daemon.sh start thrift -c -hsha
 ```
